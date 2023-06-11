@@ -7,7 +7,7 @@ public class Mastermind extends GameUi {
     private final int tamanho;
     private final int numeroMaximo;
     private final int maxTentativas;
-    private final int tentativaAtual;
+    private int tentativaAtual;
     private int[] sequencia;
 
 
