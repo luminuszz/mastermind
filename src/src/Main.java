@@ -15,7 +15,6 @@ public class Main {
 
         System.out.println("Bem-vindo ao Mastermind!");
 
-        // Configuração do jogo
         System.out.print("Digite o tamanho da sequência (entre 2 e 10): ");
         int tamanho = scanner.nextInt();
 
