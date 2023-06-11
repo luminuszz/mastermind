@@ -1,13 +1,13 @@
-package src.game;
+package game;
 
 import java.util.Arrays;
 
 public class Mastermind extends GameUi {
 
-    private int tamanho;
-    private int numeroMaximo;
-    private int maxTentativas;
-    private int tentativaAtual;
+    private final int tamanho;
+    private final int numeroMaximo;
+    private final int maxTentativas;
+    private final int tentativaAtual;
     private int[] sequencia;
 
 

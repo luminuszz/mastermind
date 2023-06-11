@@ -1,8 +1,5 @@
-package src;
-
-
-import src.game.GameUi;
-import src.game.Mastermind;
+import game.GameUi;
+import game.Mastermind;
 
 import java.util.Scanner;
 
