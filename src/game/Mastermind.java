@@ -1,6 +1,8 @@
 package game;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Mastermind extends GameUi {
 
@@ -59,8 +61,8 @@ public class Mastermind extends GameUi {
 
 
     public void mostrarFeedback() {
-        this.showMessage("Números de elementos corretos: " + numCorretos);
-        this.showMessage("Números de elementos corretos na posição correta: " + numPosicaoCorreta);
+        this.showMessage("Numero corretos: " + numPosicaoCorreta);
+        this.showMessage("Números descolados: " + numCorretos);
     }
 
 
@@ -68,11 +70,28 @@ public class Mastermind extends GameUi {
         this.numCorretos = 0;
         this.numPosicaoCorreta = 0;
 
+        List<Integer> numerosEncontrados = new ArrayList<>();
+
         for (int i = 0; i < tamanho; i++) {
-            if (palpite[i] == sequencia[i]) {
+
+            int numeroAtualDentroDoPalpite = palpite[i];
+            int numeroAtualDaSequencia = sequencia[i];
+
+            if (numeroAtualDentroDoPalpite == numeroAtualDaSequencia) {
                 numPosicaoCorreta++;
-            } else if (Utils.estaDentroDaLista(sequencia, palpite[i])) {
-                numCorretos++;
+                numerosEncontrados.add(numeroAtualDentroDoPalpite);
+
+            } else if (Utils.estaDentroDaLista(sequencia, numeroAtualDentroDoPalpite)) {
+
+
+                // Verifica e o numero que está descolado na sequencia já foi encontrado como numero correto
+
+                boolean esseNumeroJaFoiEncontrado = numerosEncontrados.contains(numeroAtualDentroDoPalpite);
+
+                if (!esseNumeroJaFoiEncontrado) {
+                    this.numCorretos++;
+                }
+
             }
         }
 
